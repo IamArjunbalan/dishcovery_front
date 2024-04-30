@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg " style="background-color: #6e7064">
+    <div class="container">
+        <a class="navbar-brand" ><i class="fa-solid fa-carrot" style="color: #e3e9f2;"></i><span style="color: aliceblue;">DishCovery</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" routerLink="/admindash" style="color: white;">Recepies</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/viewreview" style="color: white;">Review</a></li>
+                <li class="nav-item dropdown">
+                    <button  class="btn btn-danger ms-3" (click)="logout()"  >
+                        Logout
+                      </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="vh-99" style="background-color: #c7abb100;">
+    <div class="container py-3 px-2 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card shadow" style="border-radius: 1rem;">
+            <div class="row g-0">
+              
+                <h1>User Review</h1>
+                <table class="table table-bordered shadow w-90" *ngIf="review.length>0; else elsediv"  style="border: 1px solid;">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Location</th>
+                        <th>Message</th>
+                        
+                    </tr>
+                    <tr *ngFor="let i of review;index as id" >
+                        <th>{{id+1}}</th>
+                        <td>{{i.name}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.phone}}</td>
+                        <td>{{i.location}}</td>
+                     
+                        <td>{{i.message}}</td>
+                        <td>
+                            <i class="fa-solid fa-trash fa-lg" (click)="deleteItem(i._id)" style="color: #d30d0d;"></i>
+                        </td>
+        
+                    </tr>
+                
+                </table>
+                <div class="text-danger">
+                    <ng-template #elsediv>
+                        <h2 class="text-danger text-center">No Review</h2>
+                    </ng-template>
+                    <!-- <div class="d-flex justify-content-evenly">
+                        <button class="btn btn-danger" >Empty cart</button>
+                        <button class="btn btn-info" routerLink="/">shop more....</button>
+                    </div> -->
+                </div>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+

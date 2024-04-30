@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-xl-10">
+      <div class="card shadow" style="border-radius: 1rem;">
+        <div class="row g-0">
+          
+            <h1>Meal plan<span><button  class="btn btn-success ms-3"  (click)="exportToPdf()" >
+                Print
+              </button></span></h1>
+            <table class="table table-bordered shadow w-100"  *ngIf="plan.length>0; else elsediv">
+                <tr>
+                    <th>Name</th>
+                    <th>image</th>
+                    <th>ingredients</th>
+                    <th>Instruction</th>
+                    <th>Cooking time</th>
+                    <!-- <th>Category</th> -->
+                    
+                </tr>
+                <tr *ngFor="let i of plan;index as id">
+    
+                    <td>{{i.name}}</td>
+                    <td><img src={{i.image}} alt="pic" style="width: 150px; height: 150px;"></td>
+                    <td>{{i.ingredients}}</td>
+                    <td>{{i.instruction}}</td>
+                 
+                    <td>{{i.cooktime}}</td>
+                    <!-- <td>{{i.Category}}</td> -->
+                    <td>
+                        <i class="fa-solid fa-trash fa-lg"  style="color: #d30d0d;" (click)="deleteItem(i._id)"></i>
+                    </td>
+    
+                </tr>
+            
+            </table>
+            <div class="text-danger">
+              <ng-template #elsediv>
+                  <h2 class="text-danger text-center">No Plan</h2>
+              </ng-template>
+              <!-- <div class="d-flex justify-content-evenly">
+                  <button class="btn btn-danger" >Empty cart</button>
+                  <button class="btn btn-info" routerLink="/">shop more....</button>
+              </div> -->
+          </div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
