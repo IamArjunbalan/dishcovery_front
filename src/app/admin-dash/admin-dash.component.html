@@ -16,10 +16,16 @@
     </div>
 </nav>
   <!-- Section-->
+ 
   <section class="py-5">
+    <div style="margin-bottom: 20px;">
+        <p ><b>Search for dishes:</b><input  style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;" name="searchtext" type="search"  [(ngModel)]="searchKey" placeholder="Search" aria-label="Search"></p>
+       
+        
+            </div>
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5" *ngFor="let i of dish">
+            <div class="col mb-5" *ngFor="let i of dish | search:searchKey">
                 <div class="card h-100 shadow">
                     <!-- Product image-->
                     <img class="card-img-top" routerLink="/view/{{i._id}}" style="cursor: pointer;"

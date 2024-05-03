@@ -11,6 +11,7 @@ import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { MealplanComponent } from './mealplan/mealplan.component';
 import { ViewreviewComponent } from './viewreview/viewreview.component';
 import { authGuard } from './guards/auth.guard';
+import { MydishComponent } from './mydish/mydish.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'dishlist',canActivate:[authGuard],component:DishListComponent},
   {path:'plan',canActivate:[authGuard],component:MealplanComponent},
   {path:'viewreview',component:ViewreviewComponent},
+  {path:'mydish', canActivate:[authGuard],component:MydishComponent},
   
 
   

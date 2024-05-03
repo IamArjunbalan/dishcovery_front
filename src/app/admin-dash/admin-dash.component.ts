@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdminDashComponent  implements OnInit {
   dish:any=[]
+  searchKey:any=""
   constructor(private router:Router,private api:ApiService,private toastr:ToastrService){}
 
   ngOnInit() {

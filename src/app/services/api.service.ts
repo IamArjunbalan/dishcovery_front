@@ -7,6 +7,9 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   SERVER_URL="http://localhost:3000"
+  // https://dishcovery-server.onrender.com
+  
+ 
   constructor(private http:HttpClient) { }
   appendTokenToHeader(){
     const token=sessionStorage.getItem('Token')
@@ -67,6 +70,11 @@ export class ApiService {
 
   isLoggedIn(){
     return !!sessionStorage.getItem("Token")
+  }
+
+  viewmyDish(id:any){
+    return this.http.get(`${this.SERVER_URL}/user/userdish/${id}`)
+
   }
 
 }

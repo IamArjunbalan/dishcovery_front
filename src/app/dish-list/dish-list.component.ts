@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class DishListComponent implements OnInit {
   dish:any=[]
+  searchKey:any=""
   constructor(private router:Router,private api:ApiService,private toastr:ToastrService){
 
   }

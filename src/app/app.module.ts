@@ -20,6 +20,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MydishComponent } from './mydish/mydish.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { ToastrModule } from 'ngx-toastr';
     AdminDashComponent,
     MealplanComponent,
     AdmindashComponent,
-    ViewreviewComponent
+    ViewreviewComponent,
+    MydishComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,8 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
