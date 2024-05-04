@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<section class="py-5">
+    <!-- <div style="margin-bottom: 20px;">
+        <p ><b>Search for dishes:</b><input  style="padding: 8px; width: 200px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;" name="searchtext" type="search"  [(ngModel)]="searchKey" placeholder="Search" aria-label="Search"></p>
+       
+        
+            </div> -->
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let i of dish ">
+                <div class="card h-100 shadow">
+                    <!-- Product image-->
+                    <img class="card-img-top" routerLink="/view/{{i._id}}" style="cursor: pointer;"
+                    src={{i.image}} alt="..." height="180px" />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.name}}</h5>
+                            <!-- Product price-->
+                            {{i.category}}
+                        </div>
+                   </div>
+                   <div class="card-footer d-flex justify-content-between">
+                    <button class="btn btn-primary btn-block" (click)="addMeal(i)" >
+                        Add to meal plan
+                    </button>
+                    <button class="btn border border-dark btn-danger" >
+                        <i class="fa-solid fa-trash-can" style="color: #eae3e3;" (click)="deleteItem(i._id)"></i>
+                    </button>
+                    
+
+               </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

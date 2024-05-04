@@ -72,9 +72,11 @@ export class ApiService {
     return !!sessionStorage.getItem("Token")
   }
 
-  viewmyDish(id:any){
-    return this.http.get(`${this.SERVER_URL}/user/userdish/${id}`)
+  viewmyDish(){
+    return this.http.get(`${this.SERVER_URL}/user/userDish`,this.appendTokenToHeader())
 
   }
+ 
+  
 
 }
